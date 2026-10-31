@@ -1,5 +1,5 @@
 const fs = require('fs');
-const MAIL = 'support@chqaro.ge';
+const MAIL = 'chqarodelivery@gmail.com';
 const NAV = `<header><div class="wrap"><nav><a class="logo" href="index.html">Chqaro</a><a href="privacy.html">კონფიდენციალურობა</a><a href="terms.html">წესები</a><a href="delete-account.html">ანგარიშის წაშლა</a></nav></div></header>`;
 const FOOT = `<footer><div class="wrap">© 2026 Chqaro · ქუთაისი, საქართველო · <a href="mailto:${MAIL}">${MAIL}</a></div></footer>`;
 const page = (title, desc, body) => `<!doctype html><html lang="ka"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title}</title><meta name="description" content="${desc}"><link rel="stylesheet" href="style.css"></head><body>${NAV}<main><div class="wrap">\n${body}\n</div></main>${FOOT}</body></html>\n`;
