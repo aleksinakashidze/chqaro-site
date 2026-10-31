@@ -1,8 +1,8 @@
 const fs = require('fs');
 const MAIL = 'support@chqaro.ge';
-const NAV = `<header><div class="wrap"><nav><a class="logo" href="/">Chqaro</a><a href="/privacy">კონფიდენციალურობა</a><a href="/terms">წესები</a><a href="/delete-account">ანგარიშის წაშლა</a></nav></div></header>`;
+const NAV = `<header><div class="wrap"><nav><a class="logo" href="index.html">Chqaro</a><a href="privacy.html">კონფიდენციალურობა</a><a href="terms.html">წესები</a><a href="delete-account.html">ანგარიშის წაშლა</a></nav></div></header>`;
 const FOOT = `<footer><div class="wrap">© 2026 Chqaro · ქუთაისი, საქართველო · <a href="mailto:${MAIL}">${MAIL}</a></div></footer>`;
-const page = (title, desc, body) => `<!doctype html><html lang="ka"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title}</title><meta name="description" content="${desc}"><link rel="stylesheet" href="/style.css"></head><body>${NAV}<main><div class="wrap">\n${body}\n</div></main>${FOOT}</body></html>\n`;
+const page = (title, desc, body) => `<!doctype html><html lang="ka"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title}</title><meta name="description" content="${desc}"><link rel="stylesheet" href="style.css"></head><body>${NAV}<main><div class="wrap">\n${body}\n</div></main>${FOOT}</body></html>\n`;
 
 fs.writeFileSync('style.css', `:root{--brand:#E8531F;--ink:#1a1a1a;--muted:#5f6368;--line:#e6e6e6;--bg:#fff}
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Georgian",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
@@ -24,11 +24,11 @@ fs.writeFileSync('index.html', page('Chqaro — მიწოდება და 
 <div class="card"><b>Chqaro Driver</b>მძღოლის აპი: მგზავრობის შეთავაზებები, ნავიგაცია, ბალანსი.</div>
 </div>
 <p>აპები ამჟამად Google Play-ზე ტესტირების რეჟიმშია. კითხვებისთვის მოგვწერეთ <a href="mailto:${MAIL}">${MAIL}</a>.</p>
-<p><a href="/privacy">კონფიდენციალურობის პოლიტიკა</a> · <a href="/terms">წესები და პირობები</a> · <a href="/delete-account">ანგარიშის წაშლა</a></p>`));
+<p><a href="privacy.html">კონფიდენციალურობის პოლიტიკა</a> · <a href="terms.html">წესები და პირობები</a> · <a href="delete-account.html">ანგარიშის წაშლა</a></p>`));
 
 fs.writeFileSync('privacy.html', page('კონფიდენციალურობის პოლიტიკა — Chqaro', 'რა მონაცემებს აგროვებს Chqaro და როგორ იყენებს მათ.', `
 <h1>კონფიდენციალურობის პოლიტიკა</h1><p class="sub">ძალაშია 2026 წლის 1 ნოემბრიდან · ეხება Chqaro, Chqaro Courier და Chqaro Driver აპლიკაციებს</p>
-<p class="en">English summary: Chqaro collects your phone number, name, delivery addresses and, while you use the app, your location, to fulfil orders and rides. Couriers and drivers share their live location with the customer they serve. We use Firebase Cloud Messaging for notifications, Google Maps for maps, uBill for SMS codes and Flitt for card payments; card details never reach our servers. Data is stored on MongoDB Atlas and Render. You can delete your account in the app (Profile → Delete account) or via <a href="/delete-account">this page</a>. Contact: ${MAIL}.</p>
+<p class="en">English summary: Chqaro collects your phone number, name, delivery addresses and, while you use the app, your location, to fulfil orders and rides. Couriers and drivers share their live location with the customer they serve. We use Firebase Cloud Messaging for notifications, Google Maps for maps, uBill for SMS codes and Flitt for card payments; card details never reach our servers. Data is stored on MongoDB Atlas and Render. You can delete your account in the app (Profile → Delete account) or via <a href="delete-account.html">this page</a>. Contact: ${MAIL}.</p>
 
 <h2>1. ვინ ვართ</h2>
 <p>Chqaro („ჩვენ“) არის მიწოდებისა და ტაქსის შეკვეთის პლატფორმა ქუთაისსა და ბაღდათში. მონაცემთა დამუშავებაზე პასუხისმგებელია პლატფორმის ოპერატორი; საკონტაქტო ელფოსტა — <a href="mailto:${MAIL}">${MAIL}</a>.</p>
@@ -63,7 +63,7 @@ fs.writeFileSync('privacy.html', page('კონფიდენციალუ�
 <p>ანგარიშის მონაცემები ინახება ანგარიშის წაშლამდე. შეკვეთების და გადახდების ჩანაწერები საბუღალტრო მიზნებისთვის ინახება ანონიმურად ანგარიშის წაშლის შემდეგაც. SMS ლოგები იშლება 90 დღეში, ერთჯერადი კოდები — 10 წუთში.</p>
 
 <h2>6. თქვენი უფლებები</h2>
-<p>შეგიძლიათ ნებისმიერ დროს ნახოთ და შეცვალოთ სახელი და მისამართები აპში, გამორთოთ შეტყობინებები მოწყობილობის პარამეტრებში, მოითხოვოთ მონაცემების ასლი ან <a href="/delete-account">წაშალოთ ანგარიში</a>. მოთხოვნები: <a href="mailto:${MAIL}">${MAIL}</a>. ვპასუხობთ 30 დღეში. მონაცემები მუშავდება საქართველოს „პერსონალურ მონაცემთა დაცვის შესახებ“ კანონის შესაბამისად.</p>
+<p>შეგიძლიათ ნებისმიერ დროს ნახოთ და შეცვალოთ სახელი და მისამართები აპში, გამორთოთ შეტყობინებები მოწყობილობის პარამეტრებში, მოითხოვოთ მონაცემების ასლი ან <a href="delete-account.html">წაშალოთ ანგარიში</a>. მოთხოვნები: <a href="mailto:${MAIL}">${MAIL}</a>. ვპასუხობთ 30 დღეში. მონაცემები მუშავდება საქართველოს „პერსონალურ მონაცემთა დაცვის შესახებ“ კანონის შესაბამისად.</p>
 
 <h2>7. ბავშვები</h2>
 <p>სერვისი განკუთვნილია 18 წელს მიღწეული პირებისთვის. ბავშვების მონაცემებს შეგნებულად არ ვაგროვებთ.</p>
@@ -74,7 +74,7 @@ fs.writeFileSync('privacy.html', page('კონფიდენციალუ�
 fs.writeFileSync('terms.html', page('წესები და პირობები — Chqaro', 'Chqaro-ს მომსახურების წესები და პირობები.', `
 <h1>წესები და პირობები</h1><p class="sub">ძალაშია 2026 წლის 1 ნოემბრიდან</p>
 <h2>1. ზოგადი დებულებები</h2>
-<p>ჩქარო არის მიწოდებისა და ტაქსის შეკვეთის პლატფორმა ქუთაისსა და ბაღდათში. აპლიკაციის გამოყენებით თქვენ ეთანხმებით წინამდებარე პირობებს და <a href="/privacy">კონფიდენციალურობის პოლიტიკას</a>. სერვისით სარგებლობა შეუძლია 18 წელს მიღწეულ პირს.</p>
+<p>ჩქარო არის მიწოდებისა და ტაქსის შეკვეთის პლატფორმა ქუთაისსა და ბაღდათში. აპლიკაციის გამოყენებით თქვენ ეთანხმებით წინამდებარე პირობებს და <a href="privacy.html">კონფიდენციალურობის პოლიტიკას</a>. სერვისით სარგებლობა შეუძლია 18 წელს მიღწეულ პირს.</p>
 <h2>2. შეკვეთა და გადახდა</h2>
 <p>შეკვეთის ღირებულება მოიცავს პროდუქტის ფასს, მიწოდების საფასურს და მომსახურების საკომისიოს, რომლებიც შეკვეთის დადასტურებამდე ჩანს. გადახდა შესაძლებელია ნაღდი ფულით ან ბარათით (Flitt). ბარათით გადახდის შემთხვევაში შეკვეთა მომზადებაში გადადის გადახდის დადასტურების შემდეგ.</p>
 <h2>3. გაუქმება და დაბრუნება</h2>
@@ -84,7 +84,7 @@ fs.writeFileSync('terms.html', page('წესები და პირობ�
 <h2>5. პასუხისმგებლობა</h2>
 <p>პროდუქტის ხარისხზე პასუხისმგებელია ობიექტი (რესტორანი/მაღაზია). პლატფორმა უზრუნველყოფს შეკვეთის გადაცემას, მიწოდების ორგანიზებას და პრეტენზიების განხილვას. პრეტენზია მიიღება შეკვეთიდან 24 საათის განმავლობაში <a href="mailto:${MAIL}">${MAIL}</a>-ზე.</p>
 <h2>6. ანგარიში</h2>
-<p>ანგარიში იდენტიფიცირდება ტელეფონის ნომრით. წესების დარღვევის (ყალბი შეკვეთები, შეურაცხყოფა, თაღლითობა) შემთხვევაში ანგარიში შეიძლება დაიბლოკოს. ანგარიშის წაშლა შესაძლებელია აპიდან ან <a href="/delete-account">ამ გვერდით</a>.</p>
+<p>ანგარიში იდენტიფიცირდება ტელეფონის ნომრით. წესების დარღვევის (ყალბი შეკვეთები, შეურაცხყოფა, თაღლითობა) შემთხვევაში ანგარიში შეიძლება დაიბლოკოს. ანგარიშის წაშლა შესაძლებელია აპიდან ან <a href="delete-account.html">ამ გვერდით</a>.</p>
 <h2>7. ცვლილებები</h2>
 <p>პირობების განახლებისას ახალ ვერსიას ამ გვერდზე გამოვაქვეყნებთ. სერვისით სარგებლობის გაგრძელება განახლებულ პირობებზე თანხმობად ითვლება.</p>`));
 
